@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+}
+
 .blue-bg {
     background-color: #3DAFEC;
 }
@@ -14,6 +18,15 @@
     background-color: #525252;
 }
 
+.lighter-grey-bg {
+    background-color: #EDEDED;
+}
+
+.active-link {
+    background-color: #525252;
+    border-left: 3px solid #3DAFEC;
+}
+
 .blue-txt {
     color: #3DAFEC;
 }
@@ -24,4 +37,8 @@
 
 .login-button:hover {
     background-color: #2784b6;
+}
+
+.project-link:hover {
+    text-decoration: underline;
 }
