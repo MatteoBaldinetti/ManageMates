@@ -18,6 +18,7 @@ function createProjectForm(parent) {
 function changeFormContainer() {
     removeChilds(mainContainer)
     createProjectForm(mainContainer)
+    mainContainer.classList.add('d-flex');
 }
 
 window.addEventListener("load", setupListener);
