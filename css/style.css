@@ -1,0 +1,27 @@
+.blue-bg {
+    background-color: #3DAFEC;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.dark-grey-bg {
+    background-color: #2F2F2F;
+}
+
+.light-grey-bg {
+    background-color: #525252;
+}
+
+.blue-txt {
+    color: #3DAFEC;
+}
+
+.login-button {
+    background-color: #3DAFEC;
+}
+
+.login-button:hover {
+    background-color: #2784b6;
+}
