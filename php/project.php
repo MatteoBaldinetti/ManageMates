@@ -8,6 +8,9 @@
         <title>ManageMates | Projets</title>
     </head>
     <body>
+        <?php
+            include "redirect.php";
+        ?>
         <div class="container-fluid">
             <div class="row blue-bg">
                 <div class="col-9"></div>
