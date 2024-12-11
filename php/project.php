@@ -67,8 +67,12 @@
                                 $projectBudgets[] = $value["budget"];
                             }
                             
-                            foreach ($projectNames as $value) {
-                                echo '<p class="text-center text-white mb-3 project-link"><a href="#" class="text-decoration-none text-white">' . $value . '</a></p>';
+                            if (count($projectNames) != 0) { 
+                                foreach ($projectNames as $value) {
+                                    echo '<p class="text-center text-white mb-3 project-link"><a href="#" class="text-decoration-none text-white">' . $value . '</a></p>';
+                                }
+                            } else {
+                                echo "<p class='text-center text-white mb-3'>Vous n'avez pas encore de projet créé</p>";
                             }
 
                         } catch(PDOException $event) {
