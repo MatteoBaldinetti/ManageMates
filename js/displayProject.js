@@ -12,6 +12,7 @@ function displayProjectInfo(element, link) {
       })
         .done(function( response ) {
             element.innerHTML = response;
+            i = 0;
             $("p.broken").html(response);
     });
     

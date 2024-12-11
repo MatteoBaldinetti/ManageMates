@@ -46,3 +46,15 @@ a.project-link {
 a.project-link:hover {
     text-decoration: underline !important;
 }
+
+.sprint-link {
+    width: 35%;
+    background-color: white;
+    border-radius: 15px;
+    transition: 0.3s all;
+}
+
+.sprint-link:hover {
+    box-shadow: var(--bs-box-shadow) !important;
+    transition: 0.3s all;
+}
