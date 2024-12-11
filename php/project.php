@@ -45,9 +45,36 @@
                 </div>
                 <div class="col-2 light-grey-bg">
                     <h4 class="pt-4 pb-4 text-center text-white">Mes projets</h4>
-                    <p class="text-center text-white mb-3 project-link"><a href="#" class="text-decoration-none text-white">Nom projet 1</a></p>
-                    <p class="text-center text-white mb-3 project-link"><a href="#" class="text-decoration-none text-white">Nom projet 2</a></p>
-                    <p class="text-center text-white mb-3 project-link"><a href="#" class="text-decoration-none text-white">Nom projet 3</a></p>
+                    <?php
+                        require "redirect_headers.php";
+                        require "connect_db.php";
+                    
+                        try {
+                            $req = "SELECT * FROM project;";
+                    
+                            $pdoreq = $connect -> prepare($req);
+                            $pdoreq -> execute();
+                    
+                            $projectNames = array();
+                            $projectStartTimes = array();
+                            $projectDeadlines = array();
+                            $projectBudgets = array();
+
+                            foreach ($pdoreq as $value) {
+                                $projectNames[] = $value["project_name"];
+                                $projectStartTimes[] = $value["start_time"];
+                                $projectDeadlines[] = $value["deadline"];
+                                $projectBudgets[] = $value["budget"];
+                            }
+                            
+                            foreach ($projectNames as $value) {
+                                echo '<p class="text-center text-white mb-3 project-link"><a href="#" class="text-decoration-none text-white">' . $value . '</a></p>';
+                            }
+
+                        } catch(PDOException $event) {
+                            echo "Error: ".$event -> getMessage()."<br/>";
+                        }
+                    ?>
                     <h4 class="pt-4 pb-3 text-center text-white">Créer un projet</h4>
                     <div class="text-center mb-3">
                         <a id="addProjectButton" style="cursor: pointer;">
