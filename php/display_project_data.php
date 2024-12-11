@@ -17,7 +17,7 @@
                     <button type="submit" class="btn w-50 login-button text-white" onclick="addInputSprint()">Créer un sprint</button>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center">
-                    <button type="submit" class="btn w-50 login-button text-white">Supprimer un sprint</button>
+                    <button type="submit" class="btn w-50 login-button text-white" onclick="getUsers()">Ajouter un collaborateur</button>
                 </div>
                 <div id=getId class="d-none">' . $_POST["id"] . '</div>
             </div>';

@@ -15,5 +15,4 @@ function displaySprintInfo(element, link) {
             i = 0;
             $("p.broken").html(response);
     });
-    
 }
