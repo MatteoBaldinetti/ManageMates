@@ -20,8 +20,10 @@
                 </div>
                 <div class="col-2">
                     <div class="position-relative">
-                        <p class="text-white">Prénom NOM</p>
-                        <img src=""/>
+                        <p class="text-white fw-bold fs-5">
+                            <?php echo $_SESSION["username"];?>
+                            <span class="ms-5" style="cursor: pointer" onclick='window.location.href="./disconnect.php"'><img class="d-inline" src="../assets/images/logout.svg"/></span>
+                        </p>
                     </div>
                 </div>
             </div>
