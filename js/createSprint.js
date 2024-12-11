@@ -2,9 +2,15 @@ var i = 0;
 
 function addInputSprint() {
     if (i == 0) {
+        if (j == 1) {
+            document.getElementById('formDiv').remove();
+            j = 0; 
+        }
+
         let containerFormSprint = document.getElementById("containerFormSprint");
         let newForm = document.createElement("form");
         newForm.method = "get";
+        newForm.id= 'formDiv' 
         newForm.action='../php/sprint_create.php';
         newForm.class='mt-4 p-3 w-50 lighter-grey-bg shadow-sm rounded';
         newForm.style='height: fit-content; width: 50%;';

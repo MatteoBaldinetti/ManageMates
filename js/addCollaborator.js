@@ -2,9 +2,15 @@ var j = 0;
 
 function addInputCollaborator(response) {
     if (j == 0) {
+        if (i == 1) {
+            document.getElementById('formDiv').remove();
+            i = 0;
+        }
+
         let containerFormSprint = document.getElementById("containerFormSprint");
         let newForm = document.createElement("form");
         newForm.method = "get";
+        newForm.id= 'formDiv' 
         newForm.action='../php/sprint_create.php'; //changer le fichier
         newForm.class='mt-4 p-3 w-50 lighter-grey-bg shadow-sm rounded';
         newForm.style='height: fit-content; width: 50%;';
