@@ -1,5 +1,7 @@
 function displaySprint(link) {
     removeChilds(mainContainer);
+    i = 0;
+    j = 0;
     displaySprintInfo(mainContainer, link);
 }
 
