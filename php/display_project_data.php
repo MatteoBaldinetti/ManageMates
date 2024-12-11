@@ -30,7 +30,7 @@
         foreach ($pdoreq as $value) {
             echo '<div class="row mt-5 d-flex justify-content-center">
                     <div class="col-md-12 sprint-link pt-3 pb-3 shadow-sm text-center">
-                        <a href="#" class="text-black text-decoration-none"><h4>Accéder au Sprint ' . $i . '</h4></a>
+                        <a href="#" id="' . $value["sprint_id"] . '"class="text-black text-decoration-none" onclick="displaySprint(this)"><h4>Accéder au Sprint ' . $i . '</h4></a>
                     </div>
                 </div>';
             $i++;
