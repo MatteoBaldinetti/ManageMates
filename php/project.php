@@ -8,6 +8,7 @@
         <title>ManageMates | Projets</title>
     </head>
     <body>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
         <?php
             include "redirect.php";
         ?>
@@ -50,26 +51,24 @@
                         require "connect_db.php";
                     
                         try {
-                            $req = "SELECT * FROM project;";
+                            $req = "SELECT project_name, project_id FROM project;";
                     
                             $pdoreq = $connect -> prepare($req);
                             $pdoreq -> execute();
                     
                             $projectNames = array();
-                            $projectStartTimes = array();
-                            $projectDeadlines = array();
-                            $projectBudgets = array();
+                            $projectIds = array();
 
                             foreach ($pdoreq as $value) {
                                 $projectNames[] = $value["project_name"];
-                                $projectStartTimes[] = $value["start_time"];
-                                $projectDeadlines[] = $value["deadline"];
-                                $projectBudgets[] = $value["budget"];
+                                $projectIds[] = $value["project_id"];
                             }
                             
                             if (count($projectNames) != 0) { 
+                                $i = 0;
                                 foreach ($projectNames as $value) {
-                                    echo '<p class="text-center text-white mb-3 project-link"><a href="#" class="text-decoration-none text-white">' . $value . '</a></p>';
+                                    echo '<p class="text-center text-white mb-3 project-link"><a id="' . $projectIds[$i] . '" class="text-white text-decoration-none project-link" onclick="displayProject(this)">' . $value . '<a/></p>';
+                                    $i++;
                                 }
                             } else {
                                 echo "<p class='text-center text-white mb-3'>Vous n'avez pas encore de projet créé</p>";
@@ -88,22 +87,13 @@
                 </div>
                 <div id="mainContainer" class="col-9 justify-content-center" style="flex: 1;">
                     <div>
-                        <h3 class="pt-4 pb-4 text-center">Nom du projet</h3>
-                        <p class="text-center">Description du projet</p>
-                        <p class="text-center mt-5">Liste des sprints</p>
-                        <div class="row mt-5">
-                            <div class="col-md-6 d-flex justify-content-center">
-                                <button type="submit" class="btn w-50 login-button text-white">Créer un sprint</button>
-                            </div>
-                            <div class="col-md-6 d-flex justify-content-center">
-                                <button type="submit" class="btn w-50 login-button text-white">Supprimer un sprint</button>
-                            </div>
-                        </div>
+                        <h3 class="pt-4 pb-4 text-center">Sélectionnez un projet</h3>
                     </div>
                 </div>
             </div>
         </div>
         <script src="../js/addProject.js"></script>
+        <script src="../js/displayProject.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>

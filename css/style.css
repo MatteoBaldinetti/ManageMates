@@ -39,6 +39,10 @@ html, body {
     background-color: #2784b6;
 }
 
-.project-link:hover {
-    text-decoration: underline;
+a.project-link {
+    cursor: pointer;
+}
+
+a.project-link:hover {
+    text-decoration: underline !important;
 }
