@@ -49,11 +49,17 @@
                     <?php
                         require "redirect_headers.php";
                         require "connect_db.php";
-                    
+
+                        $user_id = $_SESSION["user_id"];
+
                         try {
-                            $req = "SELECT project_name, project_id FROM project;";
+                            $req = "SELECT p.project_name, p.project_id FROM collaboration AS c
+                                    JOIN project AS p ON p.project_id = c.project_id
+                                    JOIN user AS u ON u.user_id = c.user_id
+                                    WHERE c.user_id = :user_id;";
                     
                             $pdoreq = $connect -> prepare($req);
+                            $pdoreq -> bindParam(":user_id", $user_id);
                             $pdoreq -> execute();
                     
                             $projectNames = array();
