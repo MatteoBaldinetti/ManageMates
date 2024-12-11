@@ -11,7 +11,7 @@
     }
 
     try {
-        $req = "SELECT user_id, password FROM user WHERE user_id=:login;";
+        $req = "SELECT user_id, username, password FROM user WHERE user_id=:login;";
 
         $pdoreq = $connect -> prepare($req);
         $pdoreq -> bindParam(':login', $login, PDO::PARAM_STR);
@@ -22,6 +22,7 @@
         foreach ($pdoreq as $k) {
             if (password_verify($password, $k["password"])) {
                 $_SESSION["user_id"] = $k["user_id"];
+                $_SESSION["username"] = $k["username"];
                 header($project_php);
                 exit;
             }
