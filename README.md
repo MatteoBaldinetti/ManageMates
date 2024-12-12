@@ -19,3 +19,5 @@ Vous trouverez malgré tout ci-dessous le lien vers notre Google Docs afin d'avo
 ## Lien vers le Google Docs
 
 https://docs.google.com/document/d/1XCPC_QpcOgl52g-i1jOruLIk2PLJTKYVeH0otbi3jWE/edit?usp=sharing
+
+## MCD de notre base de données
