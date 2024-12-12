@@ -35,7 +35,7 @@
     
 
         echo "<h3 class='mt-5'>Liste des backlogs</h3>";
-        echo "<button type='submit' class='btn w-50 mt-3 login-button text-white' onclick='addInputBacklog()'>Créer un backlog</button>";
+        echo "<button type='submit' class='btn w-50 mt-3 login-button text-white' onclick='getUserstories()'>Créer un backlog</button>";
         echo "<div id='formBacklog'></div>";
         var_dump(value: $backlogs);
         
