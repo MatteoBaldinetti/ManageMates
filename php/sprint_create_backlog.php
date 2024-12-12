@@ -10,6 +10,7 @@
     $acceptance_criteria = $_GET["acceptanceCriteria"];
     $status = $_GET["status"];
 
+    echo "$sprint_id, $userstory_id, $task, $priority, $conception, $acceptance_criteria, $status";
     try {
         $req = 'INSERT INTO task(description) VALUES (:task);
                 INSERT INTO backlog(sprint_id, userstory_id, task_id, priority, conception, acceptance_criteria, status)

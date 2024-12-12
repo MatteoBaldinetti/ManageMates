@@ -32,8 +32,10 @@
         $pdoreq = $connect -> prepare($req);
         $pdoreq -> execute();
 
+        $i = 1;
         foreach ($pdoreq as $value) {
-            $userStories[] = [$value['userstory_id'], $value['sprint_id'], $value['description']];
+            $userStories[] = [$i, $value['sprint_id'], $value['description']];
+            $i++;
         }
 
         echo "<h3 class='mt-5'>Liste des userstories</h3>";
@@ -50,13 +52,15 @@
         echo "</table>";
     
 
-        $req = 'SELECT b.sprint_id, b.userstory_id, t.description, b.priority, b.conception, b.acceptance_criteria, b.status FROM backlog AS b JOIN task AS t ON t.task_id = b.task_id WHERE sprint_id ='. $_POST["id"] .';';
+        $req = 'SELECT b.sprint_id, b.userstory_id, t.description, b.priority, b.conception, b.acceptance_criteria, b.status FROM backlog AS b JOIN task AS t ON t.task_id = b.task_id WHERE sprint_id ='. $_POST["id"] .' ORDER BY t.task_id;';
 
         $pdoreq = $connect -> prepare($req);
         $pdoreq -> execute();
-
+        
+        $i = 1;
         foreach ($pdoreq as $value) {
-            $backlogs[] = [$value['sprint_id'], $value['userstory_id'], $value['description'], $value['priority'], $value['conception'], $value['acceptance_criteria'], $value['status']];
+            $backlogs[] = [$value['sprint_id'], $i, $value['description'], $value['priority'], $value['conception'], $value['acceptance_criteria'], $value['status']];
+            $i++;
         }
 
         echo "<h3 class='mt-5'>Liste des backlogs</h3>";

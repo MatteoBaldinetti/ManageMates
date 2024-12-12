@@ -12,7 +12,7 @@
         $pdoreq -> execute();
         $i = 1;
         foreach ($pdoreq as $value) {
-           echo  "<option value='$i'>Userstory $i</option>";
+           echo  "<option value=" . $value["userstory_id"] . ">Userstory $i</option>";
            $i++;
         }
 
