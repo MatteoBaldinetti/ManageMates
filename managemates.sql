@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2024 at 09:05 PM
+-- Generation Time: Dec 12, 2024 at 08:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -57,9 +57,8 @@ CREATE TABLE `collaboration` (
 
 CREATE TABLE `objective` (
   `objective_id` int(11) NOT NULL,
-  `number` int(11) NOT NULL,
   `sprint_id` int(11) NOT NULL,
-  `decription` varchar(255) DEFAULT NULL
+  `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -131,7 +130,6 @@ INSERT INTO `user` (`user_id`, `username`, `password`) VALUES
 CREATE TABLE `userstory` (
   `userstory_id` int(11) NOT NULL,
   `sprint_id` int(11) NOT NULL,
-  `number` int(11) NOT NULL,
   `description` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

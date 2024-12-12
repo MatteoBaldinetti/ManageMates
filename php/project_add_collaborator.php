@@ -17,16 +17,7 @@
 
         $pdoreq -> setFetchMode(PDO::FETCH_ASSOC);
 
-        foreach ($pdoreq as $k) {
-            if (password_verify($password, $k["password"])) {
-                $_SESSION["user_id"] = $k["user_id"];
-                $_SESSION["username"] = $k["username"];
-                header($project_php);
-                exit;
-            }
-        }
-
-        header($index_php);
+        header($project_php);
 
     } catch(PDOException $event) {
         echo "Error: ".$event -> getMessage()."<br/>";
