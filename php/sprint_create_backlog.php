@@ -11,8 +11,9 @@
     $status = $_GET["status"];
 
     try {
-        $req = 'INSERT INTO backlog(sprint_id, userstory_id, task, priority, conception, acceptance_criteria, status)
-                VALUES (:sprint_id, :userstory_id, :task, :priority, :conception, :acceptance_criteria, :status);';
+        $req = 'INSERT INTO task(description) VALUES (:task);
+                INSERT INTO backlog(sprint_id, userstory_id, task_id, priority, conception, acceptance_criteria, status)
+                SELECT :sprint_id, :userstory_id, MAX(task_id), :priority, :conception, :acceptance_criteria, :status FROM task;';
 
         $pdoreq = $connect -> prepare($req);
         $pdoreq -> bindParam(":sprint_id", $sprint_id, PDO::PARAM_INT);

@@ -50,13 +50,13 @@
         echo "</table>";
     
 
-        $req = 'SELECT * FROM `backlog` WHERE sprint_id ='. $_POST["id"] .';';
+        $req = 'SELECT b.sprint_id, b.userstory_id, t.description, b.priority, b.conception, b.acceptance_criteria, b.status FROM backlog AS b JOIN task AS t ON t.task_id = b.task_id WHERE sprint_id ='. $_POST["id"] .';';
 
         $pdoreq = $connect -> prepare($req);
         $pdoreq -> execute();
 
         foreach ($pdoreq as $value) {
-            $backlogs[] = [$value['sprint_id'], $value['userstory_id'], $value['task'], $value['priority'], $value['conception'], $value['acceptance_criteria'], $value['status']];
+            $backlogs[] = [$value['sprint_id'], $value['userstory_id'], $value['description'], $value['priority'], $value['conception'], $value['acceptance_criteria'], $value['status']];
         }
 
         echo "<h3 class='mt-5'>Liste des backlogs</h3>";
