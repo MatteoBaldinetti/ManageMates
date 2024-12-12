@@ -9,7 +9,7 @@ function addInputCollaborator(response) {
 
         let containerFormSprint = document.getElementById("containerFormSprint");
         let newForm = document.createElement("form");
-        newForm.method = "get";
+        newForm.method = "post";
         newForm.id= 'formDiv' 
         newForm.action='../php/project_add_collaborator.php';
         newForm.class='mt-4 p-3 w-50 lighter-grey-bg shadow-sm rounded';
@@ -22,7 +22,7 @@ function addInputCollaborator(response) {
 
 function getUsers() {
     $.ajax({
-        type: "GET",
+        type: "POST",
         url: "../php/get_users.php",
         data: {id: document.getElementById("getId").innerHTML}
       })

@@ -2,7 +2,7 @@
     require "redirect_headers.php";
     require "connect_db.php";
 
-    $project_id = $_GET["id"]; // Get current project id
+    $project_id = $_POST["id"]; // Get current project id
 
     try {
         $req = 'SELECT username FROM user WHERE user_id NOT IN (

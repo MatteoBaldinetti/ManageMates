@@ -2,8 +2,8 @@
     require "redirect_headers.php";
     require "connect_db.php";
 
-    $collaborator = $_GET["collaborator"];
-    $project_id = $_GET["project_id"];
+    $collaborator = $_POST["collaborator"];
+    $project_id = $_POST["project_id"];
     $role = 2; // Consulter le projet
 
     try {
