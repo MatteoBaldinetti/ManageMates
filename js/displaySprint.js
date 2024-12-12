@@ -1,7 +1,10 @@
+var idSprint;
+
 function displaySprint(link) {
     removeChilds(mainContainer);
     i = 0;
     j = 0;
+    idSprint = link.id;
     displaySprintInfo(mainContainer, link);
 }
 
