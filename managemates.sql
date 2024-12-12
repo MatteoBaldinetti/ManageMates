@@ -203,7 +203,6 @@ INSERT INTO `userstory` (`userstory_id`, `sprint_id`, `description`) VALUES
 --
 ALTER TABLE `backlog`
   ADD PRIMARY KEY (`sprint_id`,`userstory_id`,`task_id`),
-  ADD UNIQUE KEY `userstory_id` (`userstory_id`),
   ADD KEY `task_id` (`task_id`);
 
 --
