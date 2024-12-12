@@ -21,23 +21,24 @@
             $backlogs[] = [$value['task_id'], $value['userstory_id'], $value['priority'], $value['conception'], $value['acceptance_criteria'], $value['status']];
         }
         
-        echo "<div class='mt-5 mb-3 w-50'>";
-
-        echo "<button type='submit' class='btn w-100 login-button text-white' onclick='addInputObjective()'>Ajouter un objectif</button>";
+        echo "<h3 class='mt-5'>Listes des objectifs</h3>";
+        echo "<button type='submit' class='btn w-50 mt-3 login-button text-white' onclick='addInputObjective()'>Créer un objectif</button>";
         echo "<div id='formObjective'></div>";
         var_dump(value: $objectives);
         echo '<br/>';
     
-
-        echo "<button type='submit' class='btn w-100 mt-5 login-button text-white'>Ajouter une userstory</button>";
+        echo "<h3 class='mt-5'>Liste des userstories</h3>";
+        echo "<button type='submit' class='btn w-50 mt-3 login-button text-white' onclick='addInputUserstory()'>Créer une userstory</button>";
+        echo "<div id='formUserstory'></div>";
         var_dump(value: $userStories);
         echo '<br/>';
     
 
-        echo "<button type='submit' class='btn w-100 mt-5 login-button text-white'>Ajouter un backlog</button>";
+        echo "<h3 class='mt-5'>Liste des backlogs</h3>";
+        echo "<button type='submit' class='btn w-50 mt-3 login-button text-white' onclick='addInputBacklog()'>Créer un backlog</button>";
+        echo "<div id='formBacklog'></div>";
         var_dump(value: $backlogs);
         
-        echo "</div>";
 
     } catch(PDOException $event) {
         echo "Error: ".$event -> getMessage()."<br/>";
