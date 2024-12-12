@@ -1,10 +1,10 @@
 # Gestion de projet : Managemates
 
 ## Membre du groupe
-Mattéo BALDINETTI\n
-Ken DINH\n
-Makine MHOUMADI\n
-Ylan TCHUGOMTSEU\n
+Mattéo BALDINETTI \
+Ken DINH \
+Makine MHOUMADI \
+Ylan TCHUGOMTSEU \
 Luxchan VASANTHAN
 
 ## Lien vers le site hébergé 
