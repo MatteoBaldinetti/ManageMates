@@ -13,7 +13,7 @@
         $pdoreq -> bindParam(":description", $description, PDO::PARAM_STR);
         $pdoreq -> execute();
 
-        //header($project_php);
+        header($project_php);
 
     } catch(PDOException $event) {
         echo "Error: ".$event -> getMessage()."<br/>";
