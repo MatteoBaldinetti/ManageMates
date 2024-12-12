@@ -25,4 +25,5 @@ https://docs.google.com/document/d/1XCPC_QpcOgl52g-i1jOruLIk2PLJTKYVeH0otbi3jWE/
 
 ## MCD de notre base de données
 
-![image](https://github.com/user-attachments/assets/cf2c3e06-fa6a-4c96-8a2a-e8d3a739148a)
+![image](https://github.com/user-attachments/assets/1afdde72-c1b1-4851-87b9-638b99f6e4ee)
+
