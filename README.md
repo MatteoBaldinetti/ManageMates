@@ -10,6 +10,9 @@ Luxchan VASANTHAN
 ## Lien vers le site hébergé 
 https://managemates.free.nf/?i=1
 
+Si cela ne fonctionne pas veuillez bien vouloir le mettre en local où il y a normalement aucun problème.
+La base de données dans le Github contient notre projetn il suffit juste de l'importer.
+
 Comme vu avec vous, notre gestion de projet est disponible directement sur le site.
 Pour cela connectez-vous via l'identifiant : admin et le mot de passe : admin.
 Vous pourrez bien entendu voir le fonctionnement de notre projet qui permet de créer un projet ainsi que des sprints et d'ajouter les données à ces derniers.
