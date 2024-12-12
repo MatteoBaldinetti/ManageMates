@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2024 at 08:49 PM
+-- Generation Time: Dec 12, 2024 at 09:34 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `backlog` (
-  `task_id` int(11) NOT NULL,
-  `userstory_id` int(11) NOT NULL,
   `sprint_id` int(11) NOT NULL,
+  `userstory_id` int(11) NOT NULL,
+  `task` varchar(255) DEFAULT NULL,
   `priority` int(11) DEFAULT 0,
   `conception` varchar(255) DEFAULT NULL,
   `acceptance_criteria` varchar(255) DEFAULT NULL,
@@ -91,20 +91,6 @@ CREATE TABLE `sprint` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `task`
---
-
-CREATE TABLE `task` (
-  `task_id` int(11) NOT NULL,
-  `task_name` varchar(255) DEFAULT NULL,
-  `description` varchar(255) DEFAULT NULL,
-  `status` varchar(50) DEFAULT NULL,
-  `sprint_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -141,9 +127,8 @@ CREATE TABLE `userstory` (
 -- Indexes for table `backlog`
 --
 ALTER TABLE `backlog`
-  ADD PRIMARY KEY (`task_id`,`userstory_id`,`sprint_id`),
-  ADD KEY `userstory_id` (`userstory_id`),
-  ADD KEY `sprint_id` (`sprint_id`);
+  ADD PRIMARY KEY (`sprint_id`,`userstory_id`),
+  ADD UNIQUE KEY `userstory_id` (`userstory_id`);
 
 --
 -- Indexes for table `collaboration`
@@ -171,13 +156,6 @@ ALTER TABLE `project`
 ALTER TABLE `sprint`
   ADD PRIMARY KEY (`sprint_id`),
   ADD KEY `project_id` (`project_id`);
-
---
--- Indexes for table `task`
---
-ALTER TABLE `task`
-  ADD PRIMARY KEY (`task_id`),
-  ADD KEY `sprint_id` (`sprint_id`);
 
 --
 -- Indexes for table `user`
@@ -215,12 +193,6 @@ ALTER TABLE `sprint`
   MODIFY `sprint_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `task`
---
-ALTER TABLE `task`
-  MODIFY `task_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `userstory`
 --
 ALTER TABLE `userstory`
@@ -234,9 +206,8 @@ ALTER TABLE `userstory`
 -- Constraints for table `backlog`
 --
 ALTER TABLE `backlog`
-  ADD CONSTRAINT `backlog_ibfk_1` FOREIGN KEY (`task_id`) REFERENCES `task` (`task_id`),
-  ADD CONSTRAINT `backlog_ibfk_2` FOREIGN KEY (`userstory_id`) REFERENCES `userstory` (`userstory_id`),
-  ADD CONSTRAINT `backlog_ibfk_3` FOREIGN KEY (`sprint_id`) REFERENCES `sprint` (`sprint_id`);
+  ADD CONSTRAINT `backlog_ibfk_1` FOREIGN KEY (`sprint_id`) REFERENCES `sprint` (`sprint_id`),
+  ADD CONSTRAINT `backlog_ibfk_2` FOREIGN KEY (`userstory_id`) REFERENCES `userstory` (`userstory_id`);
 
 --
 -- Constraints for table `collaboration`
@@ -256,12 +227,6 @@ ALTER TABLE `objective`
 --
 ALTER TABLE `sprint`
   ADD CONSTRAINT `sprint_ibfk_1` FOREIGN KEY (`project_id`) REFERENCES `project` (`project_id`);
-
---
--- Constraints for table `task`
---
-ALTER TABLE `task`
-  ADD CONSTRAINT `task_ibfk_1` FOREIGN KEY (`sprint_id`) REFERENCES `sprint` (`sprint_id`);
 
 --
 -- Constraints for table `userstory`
