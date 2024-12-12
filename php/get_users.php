@@ -5,8 +5,8 @@
     $project_id = 1; // Get current project id
 
     try {
-        $req = 'SELECT username FROM user WHERE username NOT IN (
-                SELECT u.username FROM user AS u
+        $req = 'SELECT username FROM user WHERE user_id NOT IN (
+                SELECT u.user_id FROM user AS u
                 JOIN collaboration AS c ON c.user_id = u.user_id
                 JOIN project AS p ON p.project_id = c.project_id
                 WHERE p.project_id = :project_id);';
