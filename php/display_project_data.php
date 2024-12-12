@@ -18,6 +18,7 @@
                 </div>
                 <div class="col-md-6 d-flex justify-content-center">
                     <button type="submit" class="btn w-50 login-button text-white" onclick="getUsers()">Ajouter un collaborateur</button>
+                    <input type="number" class="form-control d-none" name="project_id" value="' . $_POST['id'] . '" required>
                 </div>
                 <div id=getId class="d-none">' . $_POST["id"] . '</div>
             </div>';

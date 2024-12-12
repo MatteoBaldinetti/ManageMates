@@ -22,8 +22,9 @@ function addInputCollaborator(response) {
 
 function getUsers() {
     $.ajax({
-        type: "POST",
+        type: "GET",
         url: "../php/get_users.php",
+        data: {id: document.getElementById("getId").id}
       })
         .done(function( response ) {
             $("p.broken").html(response);
