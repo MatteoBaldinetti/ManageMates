@@ -24,7 +24,7 @@ function getUsers() {
     $.ajax({
         type: "GET",
         url: "../php/get_users.php",
-        data: {id: document.getElementById("getId").id}
+        data: {id: document.getElementById("getId").innerHTML}
       })
         .done(function( response ) {
             $("p.broken").html(response);
