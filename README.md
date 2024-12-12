@@ -8,7 +8,7 @@ Ylan TCHUGOMTSEU \
 Luxchan VASANTHAN
 
 ## Lien vers le site hébergé 
-https://managemates.free.nf/?i=1
+http://managemates.free.nf/?i=1
 
 Si cela ne fonctionne pas veuillez bien vouloir le mettre en local où il y a normalement aucun problème.
 La base de données dans le Github contient notre projetn il suffit juste de l'importer.
