@@ -3,7 +3,7 @@
     require "connect_db.php";
 
     $collaborator = $_GET["collaborator"];
-    $project_id = 1; // Get the selected project id
+    $project_id = $_GET["project_id"];
     $role = 2; // Consulter le projet
 
     try {
