@@ -21,3 +21,5 @@ Vous trouverez malgré tout ci-dessous le lien vers notre Google Docs afin d'avo
 https://docs.google.com/document/d/1XCPC_QpcOgl52g-i1jOruLIk2PLJTKYVeH0otbi3jWE/edit?usp=sharing
 
 ## MCD de notre base de données
+
+![image](https://github.com/user-attachments/assets/cf2c3e06-fa6a-4c96-8a2a-e8d3a739148a)
